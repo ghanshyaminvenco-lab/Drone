@@ -1,0 +1,62 @@
+{
+  "name": "LiveOps_Auth",
+  "version": "0.0.1",
+  "author": {
+    "name": "",
+    "email": ""
+  },
+  "keywords": [
+    "uav",
+    "pixhawk",
+    "drone"
+  ],
+  "description": "LiveOps Authentication Server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node ./server.js",
+    "build": "pkg . --out-path dist"
+  },
+  "bin": {
+    "andruavauth": "server.js"
+  },
+  "dependencies": {
+    "commander": "^2.11.0",
+    "cookie-parser": "^1.3.5",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.8",
+    "emailjs": "^2.2.0",
+    "express": "^4.19.2",
+    "express-ejs-layouts": "^2.5.0",
+    "express-favicon": "^2.0.1",
+    "express-response": "^1.0.3",
+    "helmet": "^3.21.2",
+    "inherits": "^2.0.4",
+    "lowdb": "^1.0.0",
+    "mysql2": "^2.3.2",
+    "node-file-logger": "^0.9.5",
+    "randomstring": "^1.1.5",
+    "simple-json-db": "^2.0.0",
+    "uuid": "^8.3.2",
+    "validator": "^13.9.0",
+    "ws": "^7.2.3"
+  },
+  "pkg": {
+    "scripts": [
+      "database/**/*.js",
+      "routes/**/*.js",
+      "helpers/**/*.js"
+    ],
+    "assets": [
+      "views/**/*",
+      "public/**/*",
+      "ssl/**/*",
+      "server.config",
+      "database/**/*",
+      "node_modules/lowdb/**/*.js"
+    ],
+    "targets": [
+      "node18-linux-x64",
+      "node18-win-x64"
+    ]
+  }
+}
